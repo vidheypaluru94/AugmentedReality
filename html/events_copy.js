@@ -25,8 +25,8 @@ AFRAME.registerComponent("foo",{
       var pinch = new Hammer.Pinch(); // Pinch is not by default in the recognisers
       hammertime.add(pinch); // add it to the Manager instance
 
-     hammertime.get('rotate').set({ enable: true });
-     hammertime.on('rotate', (ev) => {
+      hammertime.get('rotate').set({ enable: true });
+      hammertime.on('rotate', (ev) => {
         let rotation = model.getAttribute("rotation")
         if (ev.rotation > 0) {
             rotation.y = rotation.y + 4
