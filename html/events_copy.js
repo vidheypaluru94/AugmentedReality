@@ -28,14 +28,11 @@ AFRAME.registerComponent("foo",{
      hammertime.get('rotate').set({ enable: true });
       hammertime.on('rotate', (ev) => {
         let rotation = model.getAttribute("rotation")
-        alert(ev)
-        switch(ev.direction) {      
-          case 2:
+        if (ev.rotation > 0) {
             rotation.y = rotation.y + 4
-            break;
-          case 4:
+        } else {
             rotation.y = rotation.y - 4
-            break;                    
+        }        
         // switch(ev.direction) {
         //   case 2:
         //     rotation.y = rotation.y + 4
