@@ -42,16 +42,16 @@ AFRAME.registerComponent("foo",{
         let position = model.getAttribute("position")
         switch(ev.direction) {
           case 2:
-            position.y = position.y + 0.5
+            position.x = position.x + 0.1
             break;
           case 4:
-            position.y = position.y - 0.5
+            position.x = position.x - 0.1
             break;
           case 8:
-            position.x = position.x + 0.5
+            position.z = position.z + 0.1
             break;
           case 16:
-            position.x = position.x - 0.5
+            position.z = position.z - 0.1
             break;
           default:
             break;
