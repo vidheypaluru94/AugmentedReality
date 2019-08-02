@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+    <!-- import the webpage's javascript file -->
+  </head>  
+  <body>
+    <a-scene embedded arjs='sourceType: webcam;'>
+      <a-marker-camera type="pattern" url="pattern-hiro.patt">
+        <a-entity rotation="0 0 0"
+        collada-model="url(/seat/model.dae)">
+        </a-entity>
+      </a-marker-camera>
+    </a-scene>
+    
+    <p>
+      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
+    </p>
+  </body>
+</html>
+
