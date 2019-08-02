@@ -23,32 +23,42 @@ AFRAME.registerComponent("foo",{
       var model = document.querySelector("#animated-model");
       var hammertime = new Hammer(element);
       var pinch = new Hammer.Pinch(); // Pinch is not by default in the recognisers
-      hammertime.add(pinch); // add it to the Manager instance
+      hammertime.add(pinch); // add it to the Manager instance      
 
-     hammertime.get('rotate').set({ enable: true });
+      hammertime.get('rotate').set({ enable: true });
       hammertime.on('rotate', (ev) => {
         let rotation = model.getAttribute("rotation")
-        rotation.z = rotation.z + 4
-        // switch(ev.direction) {
-        //   case 2:
-        //     rotation.y = rotation.y + 4
-        //     break;
-        //   case 4:
-        //     rotation.y = rotation.y - 4
-        //     break;
-        //   case 8:
-        //     rotation.x = rotation.x + 4
-        //     break;
-        //   case 16:
-        //     rotation.x = rotation.x - 4
-        //     break;
-        //   default:
-        //     break;
-        // }
+        if (ev.rotation > 0) {
+            rotation.y = rotation.y + 4
+        } else {
+            rotation.y = rotation.y - 4
+        }    
+
         model.setAttribute("rotation", rotation)
       });
 
-     hammertime.on('rotate')    
+
+      hammertime.on('pan', (ev) => {
+        let position = model.getAttribute("position")
+        switch(ev.direction) {
+          case 2:
+            position.x = position.x - 0.05
+            break;
+          case 4:
+            position.x = position.x + 0.05
+            break;
+          case 8:
+            position.z = position.z - 0.05
+            break;
+          case 16:
+            position.z = position.z + 0.05
+            break;
+          default:
+            break;
+        }
+        model.setAttribute("position", position)
+      });
+
      hammertime.on("pinch", (ev) => {
         let scale = {x:ev.scale, y:ev.scale, z:ev.scale}
         model.setAttribute("scale", scale);
