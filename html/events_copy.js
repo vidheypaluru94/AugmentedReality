@@ -26,13 +26,13 @@ AFRAME.registerComponent("foo",{
       hammertime.add(pinch); // add it to the Manager instance
 
      hammertime.get('rotate').set({ enable: true });
-      hammertime.on('rotate', (ev) => {
+     hammertime.on('rotate', (ev) => {
         let rotation = model.getAttribute("rotation")
         if (ev.rotation > 0) {
             rotation.y = rotation.y + 4
         } else {
             rotation.y = rotation.y - 4
-        }        
+        }    
         // switch(ev.direction) {
         //   case 2:
         //     rotation.y = rotation.y + 4
@@ -48,8 +48,7 @@ AFRAME.registerComponent("foo",{
         //     break;
         //   default:
         //     break;
-        // }
-      }
+        // }    
         model.setAttribute("rotation", rotation)
       });
 
