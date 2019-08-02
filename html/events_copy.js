@@ -28,7 +28,7 @@ AFRAME.registerComponent("foo",{
      hammertime.get('rotate').set({ enable: true });
       hammertime.on('rotate', (ev) => {
         let rotation = model.getAttribute("rotation")
-        rotation.x = rotation.x + 4
+        rotation.z = rotation.z + 4
         // switch(ev.direction) {
         //   case 2:
         //     rotation.y = rotation.y + 4
