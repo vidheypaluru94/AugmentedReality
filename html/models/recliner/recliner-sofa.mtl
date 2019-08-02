@@ -1,0 +1,22 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Mechenism
+Ns 96.078431
+Ka 0.372549 0.372549 0.372549
+Kd 0.000000 0.000000 0.000000
+Ks 0.001176 0.001176 0.001176
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Sofa
+Ns 96.078431
+Ka 0.372549 0.372549 0.372549
+Kd 0.011765 0.011765 0.011765
+Ks 0.004392 0.004392 0.004392
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump tileable-leather-patterns-3.jpg
+map_Kd tileable-leather-patterns-3.jpg
